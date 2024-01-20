@@ -1,0 +1,42 @@
+Signup backup
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">        
+<div class="row">
+   
+</div>
+  <!-- Main Content Here -->
+  <div class="card o-hidden border-0 shadow-lg my-3">
+    <div class="card-body p-10">
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <div class="p-5">
+            <div class="text-center">
+              <h1 class="h4 text-gray-900 mb-4">Sign Up</h1>
+            </div>
+            <form method="POST" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+            <hr>
+            <div class="text-center">
+              <a class="small" href="{% url 'home' %}">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+<!-- /.container-fluid -->
+
+
+s
