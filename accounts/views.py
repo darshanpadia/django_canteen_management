@@ -9,6 +9,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 
 
+
 class SignUpView(generic.CreateView):
     form_class = SignUpForm #We're subclassing the generic class-based view CreateView in our SignUp class. We specify using the built-in UserCreationForm
     success_url = reverse_lazy("home") #to redirect the user to the home page upon successful registration.
