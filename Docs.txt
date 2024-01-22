@@ -13,3 +13,8 @@ accounts/reset/done/ [name='password_reset_complete']
 
 darshan
 canteen1234
+
+
+password reset tutorial
+https://www.pythontutorial.net/django-tutorial/django-password-reset/
+new login html file in backup.html

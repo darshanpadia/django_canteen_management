@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth import logout, login, authenticate
-from accounts.forms import SignUpForm, CustomLoginForm
-from django.contrib.auth.views import LoginView, LogoutView
+from accounts.forms import SignUpForm, CustomLoginForm, CustomPasswordResetForm, CustomPasswordResetConfirmForm
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetConfirmView
 
 
 
@@ -28,6 +29,18 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user: bool = True
     success_url = reverse_lazy("home")
     template_name: str = "registration/login.html"
+
+class CustomPasswordResetView(PasswordResetView):
+    form_class = CustomPasswordResetForm
+    # redirect_authenticated_user: bool = True
+    success_url = reverse_lazy("password_reset_done")
+    template_name: str = "registration/password_reset.html"
+
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    form_class = CustomPasswordResetConfirmForm
+    success_url = reverse_lazy("password_reset_complete")
+    template_name: str = "registration/password_reset_confirm.html"
         
 
 def logout_view(request):

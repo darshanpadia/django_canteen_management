@@ -20,6 +20,7 @@
                         {{ field }}
                         <!-- {% if field.help_text %}
                           <small style="color: grey">{{ field.help_text }}</small>
+                          <br>
                         {% endif %} -->
                         {% for error in field.errors %}
                           <p style="color: red">{{ error }}</p>
@@ -27,6 +28,9 @@
                       </p>
                     {% endfor %}
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <br>
+                    <p class="text-center">Forgot your password <a href="{%url 'password-reset'%}">Reset Password</a></p>
+		                <p class="text-center">Don't have a account? <a href="{%url 'signup'%}">Join Now</a></p>
                   </form>
                 </div>
             </div>
