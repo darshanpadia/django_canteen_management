@@ -92,12 +92,12 @@ class CustomPasswordResetForm(PasswordResetForm):
         return email  
 
 class CustomPasswordResetConfirmForm(SetPasswordForm):
-    password1 = forms.CharField(max_length=64, label='Password', widget=forms.PasswordInput(attrs={'placeholder' :'Password', 'style': 'width: 100%;', 'class': 'form-control'}), help_text='')   # to remove help text from password1 field
-    password2 = forms.CharField(max_length=64, label='ConfirmPassword', widget=forms.PasswordInput(attrs={'placeholder' :'Confrim Password', 'style': 'width: 100%;', 'class': 'form-control'}), help_text='')
+    new_password1 = forms.CharField(max_length=64, label='New Password', widget=forms.PasswordInput(attrs={'placeholder' :'New Password', 'style': 'width: 100%;', 'class': 'form-control'}), help_text='')   # to remove help text from password1 field
+    new_password2 = forms.CharField(max_length=64, label='Confirm New Password', widget=forms.PasswordInput(attrs={'placeholder' :'Confrim Password', 'style': 'width: 100%;', 'class': 'form-control'}), help_text='')
     class Meta:
         model = User
         # model = get_user_model()
         # get_user_model() is intended for use in reuseable Django apps, such as those you install from PyPI. Such apps cannot know what the user model class is, so they need to use get_user_model() to refer to it. Within a project, where you know what your user model class is, you can directly import django.contrib.auth.models User.
-        fields = ('password1', 'password2', )
+        fields = ('new_password1', 'new_password2', )
 
         
